@@ -10,7 +10,7 @@
 
 [![NPM](https://nodei.co/npm/wc-bubble.png?mini=true)](https://www.npmjs.com/package/wc-bubble)
 
-A custom web component for speech bubble.
+A custom web component for a speech bubble.
 
 ![Demo image](https://yishiashia.github.io/img/demo/wc-bubble.png)
 
