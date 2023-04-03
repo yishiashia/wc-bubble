@@ -1,32 +1,26 @@
-declare module 'wc-qrcode' {
-  export default class QRCode extends HTMLElement {
+declare module 'wc-bubble' {
+  export default class Bubble extends HTMLElement {
     private props: {
-      alt: string
-      text: string
-      size: number
+      delay: number
+      avatar: string
     }
-    private qrimg: string | null
-    static get observedAttributes(): string[]
+    private msgElement: HTMLElement | null
+    private bubbleElement: HTMLElement | null
+    private _isContinued: boolean
+    private _isRight: boolean
+    private _isLoading: boolean
     constructor()
-    connectedCallback(): Promise<void>
-    attributeChangedCallback(): void
-    disconnectedCallback(): void
-    setupProps(): void
-    setupDom(): void
-    setupStyle(): void
-    setupListenEvents(): void
-    refreshQRImage(): void
-    get text(): string
-    set text(txt: string)
-    get size(): number
-    set size(sz: number | string)
-    get alt(): string
-    set alt(at: string)
-    template(data: {
-      alt: string
-      text: string
-      size: number
-    }): string
+    connectedCallback(): void
+    removeGracefully(): void
+    dispatchMountedEvent(): void
+    get continued(): boolean
+    set continued(v: boolean)
+    get right(): boolean
+    set right(v: boolean)
+    get loading(): boolean
+    set loading(v: boolean)
+    private genAvatarElement(): void
+    private genBubbleElement(): void
   }
 }
 
