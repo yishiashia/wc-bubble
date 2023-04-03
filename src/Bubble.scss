@@ -7,8 +7,11 @@
 }
 
 :host {
-  --chat-bubble-color: #fff;
+  --chat-bubble-color: #FFFFFF;
   --chat-bubble-right-color: #F6ECCC;
+  --chat-bubble-font-color: #000000;
+  --chat-bubble-font-right-color: #000000;
+  --chat-bubble-avatar-color: #CCCCCC;
   --chat-bubble-delay: 0.5s;
 }
 
@@ -33,6 +36,7 @@
     transition: width 0.5s ease, height 0.5s ease, left 0.5s ease;
     animation-fill-mode: backwards;
     animation-delay: calc(var(--chat-bubble-delay) * var(--bubble-index));
+    color: var(--chat-bubble-font-color);
     &::before {
       content: "";
       position: absolute;
@@ -52,7 +56,7 @@
     width: 36px;
     height: 36px;
     border-radius: 100%;
-    background-color: #ccc;;
+    background-color: var(--chat-bubble-avatar-color);
     border: solid 1px #666;
     overflow: hidden;
     animation: scale-in 0s ease;
@@ -68,6 +72,7 @@
     justify-content: end;
     .chat-bubble {
       background: var(--chat-bubble-right-color);
+      color: var(--chat-bubble-font-right-color);
       transform-origin: top right;
       &::before {
         border-radius: 0 0 20px 0;

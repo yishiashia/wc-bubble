@@ -117,6 +117,32 @@ if (chatBubble !== undefined) {
 ### mounted event
 When the bubble is rendered and the display animation is finished, a `mounted` event will be dispatched.
 
+## Customized styles
+By specifying CSS variables, you can customize the chat bubble styles, including the background color, font color, and animation delays.
+
+For example:
+
+```html
+<style>
+  chat-bubble {
+    --chat-bubble-color: #F5F5F5;
+    --chat-bubble-right-color: blue;
+    --chat-bubble-font-color: #333;
+    --chat-bubble-font-right-color: white;
+    --chat-bubble-avatar-color: yellow;
+    --chat-bubble-delay: 0.2s;
+  }
+</style>
+```
+
+In this example, the `--chat-bubble-color` variable is set to `#F5F5F5`, which is a light gray color that will be used as the background color for the chat bubble.The `--chat-bubble-font-color` variable is set to `#333`, which is a dark gray color that will be used as the font color (text color) for the chat bubble.
+
+The `--chat-bubble-right-color` variable is set to blue, which will be used as the background color for chat bubbles that are aligned to the right. The `--chat-bubble-font-right-color` variable is set to white, which will be used as the font color for chat bubbles that are aligned to the right.
+
+The `--chat-bubble-avatar-color` variable is set to `yellow`, which means that the chat bubble avatar will be displayed in yellow color. You can customize this variable by adjusting its value to match your design preferences.
+
+Finally, the `--chat-bubble-delay` variable is set to `0.2s`, which means that the chat bubble display animation will be delayed by 0.2 seconds. You can customize these variables by adjusting their values to match your design preferences.
+
 [wc-image]: https://img.shields.io/badge/webcomponents.org-published-blue.svg?style=flat-square
 [wc-url]: https://www.webcomponents.org/element/wc-bubble
 [npm-version-img]: https://img.shields.io/npm/v/wc-bubble.svg?style=flat-square
