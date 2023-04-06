@@ -37,6 +37,7 @@
     animation-fill-mode: backwards;
     animation-delay: calc(var(--chat-bubble-delay) * var(--bubble-index));
     color: var(--chat-bubble-font-color);
+    word-wrap: break-word;
     &::before {
       content: "";
       position: absolute;
@@ -57,7 +58,6 @@
     height: 36px;
     border-radius: 100%;
     background-color: var(--chat-bubble-avatar-color);
-    border: solid 1px #666;
     overflow: hidden;
     animation: scale-in 0s ease;
     animation-fill-mode: backwards;
