@@ -171,11 +171,14 @@ export default class Bubble extends HTMLElement {
   private genBubbleElement() {
     const chatBubble = document.createElement("div");
     chatBubble.classList.add("chat-bubble")
+    const contentDiv = document.createElement("div");
+    contentDiv.classList.add("chat-content")
+    chatBubble.appendChild(contentDiv)
     if (this.hasAttribute("loading")) {
       chatBubble.classList.add("typing-indicator");
-      chatBubble.innerHTML = `<div class="dots"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>`;
+      contentDiv.innerHTML = `<div class="dots"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>`;
     } else {
-      chatBubble.appendChild(document.createElement("slot"));
+      contentDiv.appendChild(document.createElement("slot"));
     }
     chatBubble.style.setProperty('--bubble-index', String(this.props.delay));
     chatBubble.addEventListener("animationend", this.dispatchMountedEvent);

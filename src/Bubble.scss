@@ -55,7 +55,10 @@
     animation-fill-mode: backwards;
     animation-delay: calc(var(--chat-bubble-delay) * var(--bubble-index));
     color: var(--chat-bubble-font-color);
-    word-wrap: break-word;
+    .chat-content {
+      word-wrap: break-word;
+      overflow: hidden;
+    }
     &::before {
       content: "";
       position: absolute;
