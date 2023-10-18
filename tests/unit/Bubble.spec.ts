@@ -1,7 +1,24 @@
 import { fireEvent } from '@testing-library/dom';
 import { JSDOM } from 'jsdom';
 
-global.window = new JSDOM().window;
+// Set up the CSSStyleSheet polyfill for Node.js
+(global as any).CSSStyleSheet = class CustomCSSStyleSheet {
+  private cssRules: string[];
+
+  constructor() {
+    this.cssRules = [];
+  }
+
+  replaceSync(cssText: string) {
+    if (typeof cssText === 'string') {
+      this.cssRules = cssText.split('\n').filter(Boolean);
+    } else {
+      // console.error('Invalid cssText:', cssText);
+    }
+  }
+};
+
+(global as any).window = new JSDOM().window;
 global.document = window.document;
 global.HTMLElement = window.HTMLElement;
 global.customElements = window.customElements;
@@ -11,7 +28,7 @@ const Bubble = require('../../src/index');
 
 describe('Bubble.ts', () => {
 
-  let bubbleElement;
+  let bubbleElement: typeof Bubble;
 
   beforeEach(() => {
     jest.resetAllMocks();
