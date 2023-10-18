@@ -79,12 +79,10 @@ export default class Bubble extends HTMLElement {
     wrapper.append(this.bubbleElement);
     this.msgElement = wrapper;
 
-    // Styles
-    const style = document.createElement("style");
-    style.textContent = styles;
-
     if (this.shadowRoot !== null) {
-      this.shadowRoot.append(style);
+      const sheet = new CSSStyleSheet();
+      sheet.replaceSync(styles);
+      this.shadowRoot.adoptedStyleSheets = [sheet];
       this.shadowRoot.append(wrapper);
     }
   }

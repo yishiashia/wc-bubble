@@ -1,32 +1,42 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>WebComponent | Chat bubbles</title>
     <style>
       body {
         background-color: #9dbfde;
       }
+      body.loading chat-bubble {
+        display: none;
+      }
     </style>
     <script>
-      window.add = function (text, isRight = false) {
-        const chatContainer = document.body;
-        const chatBubble = document.createElement('chat-bubble');
-        if (isRight) {
-          chatBubble.classList.add('right');
-        }
-        chatBubble.innerHTML = `<p>${text}</p>`;
-        chatContainer.appendChild(chatBubble);
-      }
+      window.onload = function () {
+        document.body.classList.remove("loading");
+      };
     </script>
   </head>
-  <body>
-    <noscript>This page contains webassembly and javascript content, please enable javascript in your browser.</noscript>
+  <body class="loading">
+    <noscript
+      >This page contains webassembly and javascript content, please enable
+      javascript in your browser.</noscript
+    >
     <chat-bubble><p>Hello</p></chat-bubble>
     <chat-bubble right delay="1">
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, ratione sed. Ipsum quas ipsa, voluptate deserunt, sapiente impedit quidem recusandae quia qui fuga quibusdam officia quisquam aperiam nisi at libero.</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, ratione sed. Ipsum quas ipsa, voluptate deserunt, sapiente impedit quidem recusandae quia qui fuga quibusdam officia quisquam aperiam nisi at libero.</p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, ratione
+        sed. Ipsum quas ipsa, voluptate deserunt, sapiente impedit quidem
+        recusandae quia qui fuga quibusdam officia quisquam aperiam nisi at
+        libero.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, ratione
+        sed. Ipsum quas ipsa, voluptate deserunt, sapiente impedit quidem
+        recusandae quia qui fuga quibusdam officia quisquam aperiam nisi at
+        libero.
+      </p>
     </chat-bubble>
     <chat-bubble delay="2"><p>Hello</p></chat-bubble>
     <chat-bubble continued delay="3">
