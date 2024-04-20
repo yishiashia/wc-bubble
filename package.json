@@ -1,6 +1,6 @@
 {
   "name": "wc-bubble",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "A lightweight and well designed chat bubble WebComponent.",
   "main": "./dist/wc-bubble.js",
   "types": "./types/index.d.ts",
